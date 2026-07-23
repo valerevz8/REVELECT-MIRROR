@@ -1,0 +1,30 @@
+{
+  "version": "0.1-alpha",
+  "placeholders": {
+    "awareness": {
+      "high": "",
+      "medium": "",
+      "low": ""
+    },
+    "emotion": {
+      "high": "",
+      "medium": "",
+      "low": ""
+    },
+    "patterns": {
+      "high": "",
+      "medium": "",
+      "low": ""
+    },
+    "agency": {
+      "high": "",
+      "medium": "",
+      "low": ""
+    },
+    "direction": {
+      "high": "",
+      "medium": "",
+      "low": ""
+    }
+  }
+}

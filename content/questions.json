@@ -1,0 +1,252 @@
+[
+  {
+    "id": 1,
+    "type": "scale",
+    "dimension": "awareness",
+    "text": {
+      "id": "Belakangan ini aku sering bertanya-tanya... sebenarnya apa yang sedang kurasakan sebelum aku buru-buru melanjutkan hari.",
+      "en": ""
+    }
+  },
+  {
+    "id": 2,
+    "type": "scale",
+    "dimension": "awareness",
+    "text": {
+      "id": "Di tengah semua yang harus kupikirkan setiap hari, aku masih sempat bertanya apa yang sebenarnya kubutuhkan.",
+      "en": ""
+    }
+  },
+  {
+    "id": 3,
+    "type": "scale",
+    "dimension": "awareness",
+    "text": {
+      "id": "Belakangan ini aku mulai bertanya-tanya... apakah aku benar-benar mengenal diriku sendiri, atau hanya terbiasa hidup sebagai diriku.",
+      "en": ""
+    }
+  },
+  {
+    "id": 4,
+    "type": "scale",
+    "dimension": "awareness",
+    "text": {
+      "id": "Ada hari-hari ketika aku merasa benar-benar hadir. Ada juga hari-hari ketika semuanya terasa berjalan begitu saja.",
+      "en": ""
+    }
+  },
+  {
+    "id": 5,
+    "type": "scale",
+    "dimension": "awareness",
+    "text": {
+      "id": "Kalau hari ini aku harus menjelaskan apa yang membuatku merasa hidup... aku tidak yakin bisa langsung menjawabnya.",
+      "en": ""
+    }
+  },
+  {
+    "id": 6,
+    "type": "scale",
+    "dimension": "emotion",
+    "text": {
+      "id": "Ada perasaan yang lebih mudah kusimpan sendiri daripada kubicarakan.",
+      "en": ""
+    }
+  },
+  {
+    "id": 7,
+    "type": "scale",
+    "dimension": "emotion",
+    "text": {
+      "id": "Kadang aku baru sadar betapa lelahnya diriku... ketika akhirnya semuanya menjadi tenang.",
+      "en": ""
+    }
+  },
+  {
+    "id": 8,
+    "type": "scale",
+    "dimension": "emotion",
+    "text": {
+      "id": "Kadang aku baru benar-benar memahami apa yang kurasakan... setelah semuanya berlalu.",
+      "en": ""
+    }
+  },
+  {
+    "id": 9,
+    "type": "scale",
+    "dimension": "emotion",
+    "text": {
+      "id": "Saat sesuatu melukai diriku, aku mencoba memahami apa yang sebenarnya sedang tersentuh dalam diriku.",
+      "en": ""
+    }
+  },
+  {
+    "id": 10,
+    "type": "scale",
+    "dimension": "emotion",
+    "text": {
+      "id": "Ada hal-hal yang sampai hari ini masih sulit kuakui, bahkan kepada diriku sendiri.",
+      "en": ""
+    }
+  },
+  {
+    "id": 11,
+    "type": "scale",
+    "dimension": "patterns",
+    "text": {
+      "id": "Belakangan ini aku mulai menyadari... beberapa reaksiku terasa lebih besar daripada kejadian yang memicunya.",
+      "en": ""
+    }
+  },
+  {
+    "id": 12,
+    "type": "scale",
+    "dimension": "patterns",
+    "text": {
+      "id": "Kadang aku merasa sedang menghadapi situasi yang berbeda... tapi perasaan yang muncul terasa sangat familiar.",
+      "en": ""
+    }
+  },
+  {
+    "id": 13,
+    "type": "scale",
+    "dimension": "patterns",
+    "text": {
+      "id": "Kadang aku bertanya-tanya... apakah ada bagian dari masa laluku yang diam-diam masih ikut mengambil keputusan hari ini.",
+      "en": ""
+    }
+  },
+  {
+    "id": 14,
+    "type": "scale",
+    "dimension": "patterns",
+    "text": {
+      "id": "Kadang aku heran... mengapa kejadian yang berbeda bisa membuatku merasakan hal yang sama.",
+      "en": ""
+    }
+  },
+  {
+    "id": 15,
+    "type": "scale",
+    "dimension": "patterns",
+    "text": {
+      "id": "Semakin aku mengenal diriku... semakin aku penasaran dari mana pola-pola itu bermula.",
+      "en": ""
+    }
+  },
+  {
+    "id": 16,
+    "type": "scale",
+    "dimension": "agency",
+    "text": {
+      "id": "Kadang yang paling sulit bukan menentukan pilihan... tapi mengenali suara mana yang benar-benar berasal dari diriku sendiri.",
+      "en": ""
+    }
+  },
+  {
+    "id": 17,
+    "type": "choice",
+    "dimension": "agency",
+    "text": {
+      "id": "Yang terasa lebih dekat denganku akhir-akhir ini...",
+      "en": ""
+    },
+    "options": {
+      "id": [
+        "Aku menunggu sampai merasa benar-benar siap.",
+        "Aku memilih melangkah meski belum yakin sepenuhnya."
+      ],
+      "en": []
+    }
+  },
+  {
+    "id": 18,
+    "type": "choice",
+    "dimension": "agency",
+    "text": {
+      "id": "Saat harus mengambil keputusan penting...",
+      "en": ""
+    },
+    "options": {
+      "id": [
+        "Aku lebih sering mendengarkan apa yang benar-benar kuinginkan.",
+        "Aku lebih sering mempertimbangkan harapan orang lain."
+      ],
+      "en": []
+    }
+  },
+  {
+    "id": 19,
+    "type": "choice",
+    "dimension": "agency",
+    "text": {
+      "id": "Kalau harus memilih...",
+      "en": ""
+    },
+    "options": {
+      "id": [
+        "Aku lebih takut menyesal karena mencoba.",
+        "Aku lebih takut menyesal karena tidak pernah mencoba."
+      ],
+      "en": []
+    }
+  },
+  {
+    "id": 20,
+    "type": "scale",
+    "dimension": "agency",
+    "text": {
+      "id": "Aku mulai percaya... pilihan kecil yang kuulang setiap hari perlahan membentuk arah hidupku.",
+      "en": ""
+    }
+  },
+  {
+    "id": 21,
+    "type": "scale",
+    "dimension": "direction",
+    "text": {
+      "id": "Belakangan ini aku mulai penasaran... seperti apa rasanya hidup jika aku benar-benar menjadi diriku sendiri.",
+      "en": ""
+    }
+  },
+  {
+    "id": 22,
+    "type": "scale",
+    "dimension": "direction",
+    "text": {
+      "id": "Ada bagian dari diriku yang rasanya mulai ingin tumbuh, meski aku belum tahu bentuknya akan seperti apa.",
+      "en": ""
+    }
+  },
+  {
+    "id": 23,
+    "type": "scale",
+    "dimension": "direction",
+    "text": {
+      "id": "Kalau aku terus hidup seperti sekarang, aku mulai bisa membayangkan ke mana arah hidupku akan berjalan.",
+      "en": ""
+    }
+  },
+  {
+    "id": 24,
+    "type": "scale",
+    "dimension": "direction",
+    "text": {
+      "id": "Semakin aku mengenal diriku, semakin aku sadar... mungkin tidak semua pertanyaan memang harus segera memiliki jawaban.",
+      "en": ""
+    }
+  },
+  {
+    "id": 25,
+    "type": "text",
+    "dimension": "direction",
+    "text": {
+      "id": "Sebelum kamu menutup halaman ini... apa satu hal tentang dirimu yang tidak ingin kamu lupakan mulai hari ini?",
+      "en": ""
+    },
+    "placeholder": {
+      "id": "Tulis beberapa kata jika kamu ingin.",
+      "en": ""
+    }
+  }
+]
