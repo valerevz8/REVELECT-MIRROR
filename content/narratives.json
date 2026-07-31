@@ -1,30 +1,127 @@
 {
-  "version": "0.1-alpha",
-  "placeholders": {
+  "version": "1.0.0",
+  "themes": {
     "awareness": {
-      "high": "",
-      "medium": "",
-      "low": ""
+      "high": {
+        "title": "A clearer inner room",
+        "summary": "Your answers suggest that awareness is near the surface today. You may already be noticing what you feel, what you need, and where your attention is being pulled.",
+        "attention": "Protect this clarity from becoming pressure. Awareness is most useful when it stays compassionate, not when it turns into another demand to understand everything at once.",
+        "exploration": "Keep asking small, honest questions before the day becomes too loud.",
+        "mirrorMoment": "You do not need to rush past what you are finally able to notice."
+      },
+      "medium": {
+        "title": "A quiet beginning of noticing",
+        "summary": "Awareness appears as an emerging theme. Some parts of your experience may feel visible, while other parts still need time before they can be named.",
+        "attention": "The invitation is not to force an answer, but to create enough quiet that an answer can arrive naturally.",
+        "exploration": "Notice what repeats in your thoughts when nothing is asking for your performance.",
+        "mirrorMoment": "Something in you is already paying attention."
+      },
+      "low": {
+        "title": "A life moving quickly",
+        "summary": "Your reflection suggests that awareness may be harder to access right now. This can happen when life has required movement, competence, or endurance for too long.",
+        "attention": "Begin with the body and the moment you are in. You do not have to explain your whole life to return to yourself.",
+        "exploration": "Try naming one sensation, one need, or one small truth without needing it to be complete.",
+        "mirrorMoment": "Even a faint signal is still a signal."
+      }
     },
     "emotion": {
-      "high": "",
-      "medium": "",
-      "low": ""
+      "high": {
+        "title": "Feelings asking to be honored",
+        "summary": "Emotion is vivid in your reflection. There may be feelings you have carried privately, understood late, or protected because they matter.",
+        "attention": "Strong emotion does not mean you are too much. It may mean something important has been asking for language.",
+        "exploration": "Ask what each feeling is trying to protect, not only what it is trying to express.",
+        "mirrorMoment": "What you feel deserves room before it becomes a conclusion."
+      },
+      "medium": {
+        "title": "An emotional current beneath the surface",
+        "summary": "Your answers point to emotion as present but measured. You may sense what is there without fully entering it yet.",
+        "attention": "Let emotion arrive in portions. Gentle contact can be more sustainable than intensity.",
+        "exploration": "Notice which feelings become clearer only after the moment has passed.",
+        "mirrorMoment": "You are allowed to understand yourself slowly."
+      },
+      "low": {
+        "title": "A softer doorway to feeling",
+        "summary": "Emotion may be quieter in this reflection. That quiet can be numbness, steadiness, protection, or simply the shape of today.",
+        "attention": "Do not treat emotional quiet as absence. Sometimes the first honest step is admitting that you do not know what you feel yet.",
+        "exploration": "Begin with what feels easy, tense, heavy, or light.",
+        "mirrorMoment": "Not knowing is still a truthful place to begin."
+      }
     },
     "patterns": {
-      "high": "",
-      "medium": "",
-      "low": ""
+      "high": {
+        "title": "Patterns becoming visible",
+        "summary": "Your reflection suggests you are noticing familiar reactions, repeated feelings, or old material showing up in present moments.",
+        "attention": "Seeing a pattern is not the same as being trapped by it. Recognition can become a doorway rather than a verdict.",
+        "exploration": "Ask where this response first learned to keep you safe.",
+        "mirrorMoment": "The pattern is information, not identity."
+      },
+      "medium": {
+        "title": "A thread you are beginning to follow",
+        "summary": "Patterns are present, though not overwhelming. You may be starting to connect experiences that once felt separate.",
+        "attention": "Stay curious instead of corrective. The goal is to understand the rhythm before trying to change it.",
+        "exploration": "Notice when a current moment feels older than it is.",
+        "mirrorMoment": "Curiosity can loosen what criticism keeps tight."
+      },
+      "low": {
+        "title": "Less repetition in focus today",
+        "summary": "Patterns were not the loudest theme in this reflection. Today may be more about the present moment than the origins of your responses.",
+        "attention": "If nothing obvious repeats, let that be useful information too. Reflection does not need to excavate every day.",
+        "exploration": "Watch gently for moments that feel familiar without forcing a story around them.",
+        "mirrorMoment": "Some days ask for presence, not analysis."
+      }
     },
     "agency": {
-      "high": "",
-      "medium": "",
-      "low": ""
+      "high": {
+        "title": "A stronger sense of choosing",
+        "summary": "Agency is prominent in your answers. There may be a growing trust in your capacity to move, decide, and listen for your own voice.",
+        "attention": "Choice does not require total certainty. Often it asks for enough honesty to take the next faithful step.",
+        "exploration": "Identify one decision that would feel like self-respect, even if it stays small.",
+        "mirrorMoment": "You can move before every doubt has disappeared."
+      },
+      "medium": {
+        "title": "Choice at the edge of readiness",
+        "summary": "Your reflection suggests agency is available, but mixed with hesitation, responsibility, or the voices of others.",
+        "attention": "The work may be separating caution from fear, and care for others from abandonment of yourself.",
+        "exploration": "Ask which option makes you feel more honest, not only more approved.",
+        "mirrorMoment": "Your voice can be quiet and still be yours."
+      },
+      "low": {
+        "title": "A need to reclaim your own voice",
+        "summary": "Agency may feel less accessible right now. Decisions might feel delayed, crowded, or shaped by expectations around you.",
+        "attention": "Start with one small choice that belongs fully to you. Reclaiming agency often begins beneath the dramatic level.",
+        "exploration": "Notice where you say yes before checking whether you mean it.",
+        "mirrorMoment": "A small honest choice can reopen a larger path."
+      }
     },
     "direction": {
-      "high": "",
-      "medium": "",
-      "low": ""
+      "high": {
+        "title": "A horizon beginning to form",
+        "summary": "Direction is strong in your reflection. You may not have every answer, but there is a sense of becoming, growth, or a life that wants to align more closely with you.",
+        "attention": "Let direction stay alive rather than fixed. A true horizon guides you without demanding that you arrive immediately.",
+        "exploration": "Ask what kind of future feels more like breathing than performing.",
+        "mirrorMoment": "You are allowed to grow toward a shape you cannot fully see yet."
+      },
+      "medium": {
+        "title": "A future softly asking for attention",
+        "summary": "Direction is present as a question. You may sense movement without knowing exactly what it will become.",
+        "attention": "Uncertainty does not mean you are lost. It may mean the next version of your life is still gathering language.",
+        "exploration": "Notice what gives you energy before you try to turn it into a plan.",
+        "mirrorMoment": "Not all direction begins as certainty."
+      },
+      "low": {
+        "title": "A pause before the next shape",
+        "summary": "Direction may feel quiet or unclear today. This can be a meaningful pause rather than a problem to solve quickly.",
+        "attention": "If the future feels distant, return to the next true thing. Direction can begin with one aligned moment.",
+        "exploration": "Ask what you no longer want to abandon in yourself.",
+        "mirrorMoment": "The path can be unclear while the next step is still real."
+      }
     }
+  },
+  "closingQuestions": {
+    "awareness": "What small truth about yourself can you make room for today?",
+    "emotion": "What feeling might soften if it were allowed to be heard?",
+    "patterns": "What familiar response are you ready to meet with curiosity?",
+    "agency": "What choice would feel quietly loyal to yourself?",
+    "direction": "What future version of you is asking for one small gesture now?"
   }
 }
