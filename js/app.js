@@ -1,33 +1,25 @@
 (function () {
   const main = document.querySelector('main');
   if (!main) return;
+  const session = window.RevelectStorage.readSession();
+  const history = window.RevelectStorage.readHistory();
+  const answered = Object.keys(session.answers || {}).length;
+  const cta = answered ? 'Resume Reflection' : 'Start Reflection';
 
   main.innerHTML = `
-    <div class="shell">
+    <div class="shell shell--home fade-in">
       <nav class="nav" aria-label="Primary">
-        <a class="logo" href="index.html">REVELECT</a>
-        <div class="nav__links"><a href="reflection.html">Reflection</a><a href="report.html">Report</a></div>
+        <a class="logo" href="index.html" aria-label="REVELECT home">REVELECT</a>
+        <div class="nav__links"><a href="reflection.html">Reflection</a>${history.length ? '<a href="report.html">History</a>' : ''}</div>
       </nav>
-      <section class="hero">
-        <div>
-          <p class="eyebrow">One reflection · One insight</p>
-          <h1>A different way of seeing yourself.</h1>
-          <p class="lead">REVELECT is a quiet guided reflection that helps you notice awareness, emotion, patterns, agency, and direction in the life you are already living.</p>
-          <div class="actions">
-            <a class="button" href="reflection.html">Start your reflection</a>
-            <a class="button button--ghost" href="report.html">View saved report</a>
-          </div>
+      <section class="hero hero--single" aria-labelledby="hero-title">
+        <p class="eyebrow">A quiet mirror for today</p>
+        <h1 id="hero-title">See yourself with more tenderness.</h1>
+        <p class="lead">REVELECT guides you through 25 reflective prompts, then returns a calm editorial report about the themes, signals, and questions already present in your answers.</p>
+        <div class="actions">
+          <a class="button" href="reflection.html">${cta}</a>
+          ${history.length ? '<a class="button button--ghost" href="report.html">Open History</a>' : ''}
         </div>
-        <aside class="card hero-card" aria-label="Reflection preview">
-          <p class="eyebrow">Preview</p>
-          <h2>Pause before the day moves on.</h2>
-          <p>Answer a short set of prompts, then receive a simple snapshot of the themes that surfaced in your responses.</p>
-        </aside>
-      </section>
-      <section class="steps" aria-label="How it works">
-        <div class="step"><strong>01 · Notice</strong><span>Respond to reflective prompts without needing perfect answers.</span></div>
-        <div class="step"><strong>02 · Map</strong><span>Your responses are grouped into five human-centered dimensions.</span></div>
-        <div class="step"><strong>03 · Return</strong><span>Keep the final note you do not want to forget today.</span></div>
       </section>
     </div>`;
 })();
