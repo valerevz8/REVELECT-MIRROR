@@ -20,7 +20,7 @@
       const finalNote = session.answers[25];
       main.innerHTML = `
         <div class="shell">
-          <nav class="nav"><a class="logo" href="index.html">REVELECT</a><a href="reflection.html">Reflect again</a></nav>
+          <nav class="nav"><a class="logo" href="index.html" aria-label="REVELECT home"><img src="assets/revelect-logo.png" alt="REVELECT"></a><a href="reflection.html">Reflect again</a></nav>
           <section class="card">
             <p class="eyebrow">Your reflection report</p>
             <h1>What surfaced today</h1>
