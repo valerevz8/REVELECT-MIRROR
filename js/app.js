@@ -5,7 +5,7 @@
   main.innerHTML = `
     <div class="shell">
       <nav class="nav" aria-label="Primary">
-        <a class="logo" href="index.html">REVELECT</a>
+        <a class="logo" href="index.html" aria-label="REVELECT home"><img src="assets/revelect-logo.png" alt="REVELECT"></a>
         <div class="nav__links"><a href="reflection.html">Reflection</a><a href="report.html">Report</a></div>
       </nav>
       <section class="hero">
