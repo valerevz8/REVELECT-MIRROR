@@ -41,9 +41,19 @@ a { color: inherit; }
 }
 
 .logo {
-  font-weight: 800;
-  letter-spacing: 0.22em;
+  display: inline-block;
+  width: 150px;
+  height: 30px;
+  overflow: hidden;
+  background-image: url('../assets/revelect-logo.png'), url('../assets/REVELECT LOGO.png');
+  background-position: left center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .nav__links { display: flex; gap: 18px; color: var(--muted); font-size: 0.95rem; }
