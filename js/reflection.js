@@ -24,12 +24,12 @@
   function renderInput(question) {
     const saved = state.session.answers[question.id];
     if (question.type === 'choice') {
-      return `<div class="scale">${question.options.id.map((option, index) => `<button class="option" data-choice="${index}">${option}</button>`).join('')}</div>`;
+      return `<div class="choice-list">${question.options.id.map((option, index) => `<button class="option choice-card" data-choice="${index}"><span>0${index + 1}</span>${option}</button>`).join('')}</div>`;
     }
     if (question.type === 'text') {
       return `<textarea id="text-answer" placeholder="${question.placeholder.id}">${saved || ''}</textarea>`;
     }
-    return `<div class="scale" aria-label="Scale from 1 to 5">${[1, 2, 3, 4, 5].map((value) => `<button data-scale="${value}" aria-pressed="${Number(saved) === value}">${value}</button>`).join('')}</div>`;
+    return `<div class="editorial-scale" role="radiogroup" aria-label="Less like me to more like me"><span class="scale-label">Less like me</span><div class="scale-track">${[1, 2, 3, 4, 5].map((value) => `<button class="scale-point" type="button" data-scale="${value}" role="radio" aria-label="${value} out of 5" aria-checked="${Number(saved) === value}"><span></span></button>`).join('')}</div><span class="scale-label">More like me</span></div>`;
   }
 
   function renderQuestion() {
@@ -37,8 +37,8 @@
     const progress = Math.round(((state.index + 1) / state.questions.length) * 100);
     main.innerHTML = `
       <div class="shell">
-        <nav class="nav"><a class="logo" href="index.html">REVELECT</a><span>${state.index + 1} / ${state.questions.length}</span></nav>
-        <section class="card question">
+        <nav class="nav"><a class="logo" href="index.html">REVELECT</a><span class="question-count">${state.index + 1} / ${state.questions.length}</span></nav>
+        <section class="card question reflection-card">
           <p class="eyebrow">${question.dimension}</p>
           <div class="progress"><div class="progress__bar" style="width:${progress}%"></div></div>
           <h1>${question.text.id}</h1>
