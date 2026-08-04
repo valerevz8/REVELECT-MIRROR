@@ -18,15 +18,17 @@
 
       const scores = window.RevelectEngine.calculateScores(questions, dimensions, session.answers);
       const finalNote = session.answers[25];
+      const strongestTheme = [...scores].sort((a, b) => b.percent - a.percent)[0];
       main.innerHTML = `
         <div class="shell">
           <nav class="nav"><a class="logo" href="index.html">REVELECT</a><a href="reflection.html">Reflect again</a></nav>
-          <section class="card">
+          <section class="report">
             <p class="eyebrow">Your reflection report</p>
             <h1>What surfaced today</h1>
-            <p class="lead">This is not a diagnosis or a scorecard. It is a mirror for the themes present in your answers.</p>
-            <div class="report-grid">${scores.map((score) => `<article class="metric"><span>${score.name}</span><br><b>${score.percent}%</b><p>${narrativeFor(score)}</p></article>`).join('')}</div>
-            ${finalNote ? `<article class="step"><strong>A note to remember</strong><span>${finalNote}</span></article>` : ''}
+            <p class="lead">A quiet mirror for the themes present in your answers.</p>
+            <div class="report-list">${scores.map((score) => `<article class="metric"><span>${score.name}</span><b>${score.percent}%</b><p>${narrativeFor(score)}</p></article>`).join('')}</div>
+            <article class="mirror"><strong>Mirror Moment</strong><span>Your reflection keeps returning to ${strongestTheme.name.toLowerCase()}. Let this be the place you listen first.</span></article>
+            ${finalNote ? `<article class="closing"><strong>Closing Question</strong><p>What you chose to remember:</p><span>${finalNote}</span></article>` : ''}
             <div class="actions"><button class="button button--ghost" id="reset">Clear saved reflection</button></div>
           </section>
         </div>`;
