@@ -3,9 +3,9 @@
   const session = window.RevelectStorage.readSession();
 
   function narrativeFor(score) {
-    if (score.band === 'high') return 'This theme is strongly present in your reflection today.';
-    if (score.band === 'medium') return 'This theme is present, with room for more gentle attention.';
-    return 'This theme may be asking for slower, kinder attention.';
+    if (score.band === 'high') return 'This theme speaks clearly in today’s reflection, asking to be trusted as part of the story.';
+    if (score.band === 'medium') return 'This theme is present in softer focus, offering a place to return with patience.';
+    return 'This theme remains quiet today, perhaps asking for gentler attention over time.';
   }
 
   window.RevelectEngine.loadContent()
@@ -21,12 +21,12 @@
       main.innerHTML = `
         <div class="shell">
           <nav class="nav"><a class="logo" href="index.html">REVELECT</a><a href="reflection.html">Reflect again</a></nav>
-          <section class="card">
+          <section class="card report-article">
             <p class="eyebrow">Your reflection report</p>
             <h1>What surfaced today</h1>
-            <p class="lead">This is not a diagnosis or a scorecard. It is a mirror for the themes present in your answers.</p>
+            <div class="chapter-line" aria-hidden="true"></div><p class="lead">This is not a diagnosis or a scorecard. It is a mirror for the themes present in your answers — a quiet reading of what asked to be noticed.</p>
             <div class="report-grid">${scores.map((score) => `<article class="metric"><span>${score.name}</span><br><b>${score.percent}%</b><p>${narrativeFor(score)}</p></article>`).join('')}</div>
-            ${finalNote ? `<article class="step"><strong>A note to remember</strong><span>${finalNote}</span></article>` : ''}
+            ${finalNote ? `<article class="mirror"><span class="quote-mark" aria-hidden="true">“</span><p class="eyebrow">Mirror Moment</p><h2>${finalNote}</h2><p>Let this sentence remain unfinished in the best way: alive enough to meet you again later.</p></article><article class="step"><strong>Closing Question</strong><span>What would change if you let this be enough for today?</span></article>` : ''}
             <div class="actions"><button class="button button--ghost" id="reset">Clear saved reflection</button></div>
           </section>
         </div>`;

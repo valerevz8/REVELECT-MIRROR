@@ -34,13 +34,12 @@
 
   function renderQuestion() {
     const question = currentQuestion();
-    const progress = Math.round(((state.index + 1) / state.questions.length) * 100);
     main.innerHTML = `
       <div class="shell">
-        <nav class="nav"><a class="logo" href="index.html">REVELECT</a><span>${state.index + 1} / ${state.questions.length}</span></nav>
+        <nav class="nav"><a class="logo" href="index.html">REVELECT</a><span class="question-count">${String(state.index + 1).padStart(2, '0')}</span></nav>
         <section class="card question">
           <p class="eyebrow">${question.dimension}</p>
-          <div class="progress"><div class="progress__bar" style="width:${progress}%"></div></div>
+          <div class="chapter-line" aria-hidden="true"></div>
           <h1>${question.text.id}</h1>
           ${renderInput(question)}
           <div class="controls">
