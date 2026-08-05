@@ -8,14 +8,23 @@
         <a class="logo" href="index.html">REVELECT</a>
         <div class="nav__links"><a href="reflection.html">Reflection</a><a href="report.html">Report</a></div>
       </nav>
-      <section class="landing-hero" aria-labelledby="landing-title">
-        <p class="eyebrow">A quiet editorial mirror</p>
-        <h1 id="landing-title">Meet yourself where you are.</h1>
-        <p class="lead">REVELECT turns a few considered questions into a personal reflection across awareness, emotion, patterns, agency, and direction.</p>
-        <div class="actions landing-actions">
-          <a class="button" href="reflection.html">Begin reflection</a>
-          <a class="text-link" href="report.html">Return to your report</a>
+      <section class="landing-composition" aria-labelledby="landing-title">
+        <div class="landing-hero">
+          <p class="eyebrow">One reflection. One insight.</p>
+          <h1 id="landing-title">See Clearly.</h1>
+          <p class="landing-kicker">A different way of seeing yourself.</p>
+          <p class="lead">REVELECT is a quiet reflection experience designed to help you notice patterns, emotions, awareness, and direction with greater clarity.</p>
+          <div class="actions landing-actions">
+            <a class="button" href="reflection.html">Begin reflection</a>
+            <a class="button button--ghost" href="report.html">Return to your report</a>
+          </div>
         </div>
+        <aside class="card preview-card" aria-label="Reflection preview">
+          <p class="eyebrow">Today’s mirror</p>
+          <strong>Awareness begins quietly.</strong>
+          <div class="preview-card__rule"></div>
+          <p>A short sequence of considered prompts, held in a calm space, reveals the shape of what is already present.</p>
+        </aside>
       </section>
       <section class="editorial-strip" aria-label="Reflection rhythm">
         <article><span>01</span><strong>Read slowly</strong><p>Each prompt is written to invite attention rather than performance.</p></article>
