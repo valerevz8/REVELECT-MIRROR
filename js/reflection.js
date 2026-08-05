@@ -29,7 +29,8 @@
     if (question.type === 'text') {
       return `<textarea id="text-answer" placeholder="${question.placeholder.id}">${saved || ''}</textarea>`;
     }
-    return `<div class="editorial-scale" role="radiogroup" aria-label="Less like me to more like me"><span class="scale-label">Less like me</span><div class="scale-track">${[1, 2, 3, 4, 5].map((value) => `<button class="scale-point" type="button" data-scale="${value}" role="radio" aria-label="${value} out of 5" aria-checked="${Number(saved) === value}"><span></span></button>`).join('')}</div><span class="scale-label">More like me</span></div>`;
+    const selected = Number(saved) || 0;
+    return `<div class="editorial-scale" role="radiogroup" aria-label="Less like me to more like me"><span class="scale-label">Less like me</span><div class="scale-track" style="--selected:${selected}; --preview:${selected || 1};">${[1, 2, 3, 4, 5].map((value) => `<button class="scale-point ${selected >= value ? 'is-filled' : ''}" type="button" data-scale="${value}" role="radio" aria-label="${value} out of 5" aria-checked="${selected === value}"><span></span></button>`).join('')}</div><span class="scale-label">More like me</span></div>`;
   }
 
   function renderQuestion() {
@@ -51,7 +52,29 @@
       </div>`;
 
     main.querySelector('#back')?.addEventListener('click', () => { state.index -= 1; renderQuestion(); });
-    main.querySelectorAll('[data-scale]').forEach((button) => button.addEventListener('click', () => { saveAnswer(Number(button.dataset.scale)); goNext(); }));
+    main.querySelectorAll('[data-scale]').forEach((button) => {
+      const track = button.closest('.scale-track');
+      const preview = () => {
+        const value = Number(button.dataset.scale);
+        track.style.setProperty('--preview', value);
+        track.querySelectorAll('.scale-point').forEach((point) => point.classList.toggle('is-filled', Number(point.dataset.scale) <= value));
+      };
+      button.addEventListener('mouseenter', preview);
+      button.addEventListener('focus', preview);
+      button.addEventListener('click', () => {
+        const value = Number(button.dataset.scale);
+        saveAnswer(value);
+        track.style.setProperty('--selected', value);
+        preview();
+        window.setTimeout(goNext, 240);
+      });
+    });
+    main.querySelector('.scale-track')?.addEventListener('mouseleave', (event) => {
+      const track = event.currentTarget;
+      const selected = Number(track.style.getPropertyValue('--selected')) || 0;
+      track.style.setProperty('--preview', selected || 1);
+      track.querySelectorAll('.scale-point').forEach((point) => point.classList.toggle('is-filled', Number(point.dataset.scale) <= selected));
+    });
     main.querySelectorAll('[data-choice]').forEach((button) => button.addEventListener('click', () => { saveAnswer(Number(button.dataset.choice)); goNext(); }));
     main.querySelector('#continue')?.addEventListener('click', () => { saveAnswer(main.querySelector('#text-answer').value); goNext(); });
   }
