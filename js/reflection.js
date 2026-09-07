@@ -30,7 +30,7 @@
       return `<textarea id="text-answer" placeholder="${question.placeholder.id}">${saved || ''}</textarea>`;
     }
     const selected = Number(saved) || 0;
-    return `<div class="editorial-scale" role="radiogroup" aria-label="Less like me to more like me"><span class="scale-label">Less like me</span><div class="scale-track" style="--selected:${selected}; --preview:${selected || 1};">${[1, 2, 3, 4, 5].map((value) => `<button class="scale-point ${selected >= value ? 'is-filled' : ''}" type="button" data-scale="${value}" role="radio" aria-label="${value} out of 5" aria-checked="${selected === value}"><span></span></button>`).join('')}</div><span class="scale-label">More like me</span></div>`;
+    return `<div class="editorial-scale" role="radiogroup" aria-label="Less like me to more like me"><span class="scale-label">Less like me</span><div class="scale-track">${[1, 2, 3, 4, 5].map((value) => `<button class="scale-point ${selected === value ? 'is-filled' : ''}" type="button" data-scale="${value}" role="radio" aria-label="${value} out of 5" aria-checked="${selected === value}"><span></span></button>`).join('')}</div><span class="scale-label">More like me</span></div>`;
   }
 
   function renderQuestion() {
@@ -44,8 +44,10 @@
           <div class="progress"><div class="progress__bar" style="width:${progress}%"></div></div>
           <h1>${question.text.id}</h1>
           ${renderInput(question)}
+          <p class="validation-message" id="validation" role="alert"></p>
           <div class="controls">
             <button class="button button--ghost" id="back" ${state.index === 0 ? 'disabled' : ''}>Back</button>
+            ${question.type === 'scale' ? `<button class="button" id="continue" ${state.session.answers[question.id] ? '' : 'disabled'}>Continue</button>` : ''}
             ${question.type === 'text' ? '<button class="button" id="continue">Finish reflection</button>' : ''}
           </div>
         </section>
@@ -53,30 +55,29 @@
 
     main.querySelector('#back')?.addEventListener('click', () => { state.index -= 1; renderQuestion(); });
     main.querySelectorAll('[data-scale]').forEach((button) => {
-      const track = button.closest('.scale-track');
-      const preview = () => {
-        const value = Number(button.dataset.scale);
-        track.style.setProperty('--preview', value);
-        track.querySelectorAll('.scale-point').forEach((point) => point.classList.toggle('is-filled', Number(point.dataset.scale) <= value));
-      };
-      button.addEventListener('mouseenter', preview);
-      button.addEventListener('focus', preview);
       button.addEventListener('click', () => {
         const value = Number(button.dataset.scale);
         saveAnswer(value);
-        track.style.setProperty('--selected', value);
-        preview();
-        window.setTimeout(goNext, 240);
+        main.querySelectorAll('[data-scale]').forEach((point) => {
+          const isSelected = Number(point.dataset.scale) === value;
+          point.classList.toggle('is-filled', isSelected);
+          point.setAttribute('aria-checked', String(isSelected));
+        });
+        main.querySelector('#continue').disabled = false;
       });
     });
-    main.querySelector('.scale-track')?.addEventListener('mouseleave', (event) => {
-      const track = event.currentTarget;
-      const selected = Number(track.style.getPropertyValue('--selected')) || 0;
-      track.style.setProperty('--preview', selected || 1);
-      track.querySelectorAll('.scale-point').forEach((point) => point.classList.toggle('is-filled', Number(point.dataset.scale) <= selected));
+    main.querySelector('#continue')?.addEventListener('click', () => {
+      const value = state.session.answers[question.id];
+      if (question.type === 'scale' && !value) return;
+      if (question.type === 'text' && !String(main.querySelector('#text-answer').value).trim()) {
+        main.querySelector('#validation').textContent = 'Take a moment to leave a note before you continue.';
+        main.querySelector('#text-answer').focus();
+        return;
+      }
+      if (question.type === 'text') saveAnswer(main.querySelector('#text-answer').value.trim());
+      goNext();
     });
     main.querySelectorAll('[data-choice]').forEach((button) => button.addEventListener('click', () => { saveAnswer(Number(button.dataset.choice)); goNext(); }));
-    main.querySelector('#continue')?.addEventListener('click', () => { saveAnswer(main.querySelector('#text-answer').value); goNext(); });
   }
 
   window.RevelectEngine.loadContent()
