@@ -16,7 +16,13 @@
     return next;
   }
 
+  function completeSession(session) {
+    const next = { ...session, completedAt: new Date().toISOString() };
+    global.localStorage.setItem(KEY, JSON.stringify(next));
+    return next;
+  }
+
   function clearSession() { global.localStorage.removeItem(KEY); }
 
-  global.RevelectStorage = { readSession, writeSession, clearSession };
+  global.RevelectStorage = { readSession, writeSession, completeSession, clearSession };
 })(window);
